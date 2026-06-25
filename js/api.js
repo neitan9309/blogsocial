@@ -1,13 +1,5 @@
-/**
- * API Client - BlogSocial
- * Comunicação com o backend SQLite
- */
 var API = {
-    BASE_URL: window.location.origin + '/api',
-
-    // ==========================================
-    // AUTORES
-    // ==========================================
+    BASE_URL: '/api',
 
     login: function(email, senha) {
         return fetch(this.BASE_URL + '/login', {
@@ -28,28 +20,20 @@ var API = {
     criarAutor: function(dados) {
         return fetch(this.BASE_URL + '/autores', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dados)
+            body: dados  // FormData
         }).then(function(r) { return r.json(); });
     },
 
     atualizarAutor: function(id, dados) {
         return fetch(this.BASE_URL + '/autores/' + id, {
             method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dados)
+            body: dados  // FormData
         }).then(function(r) { return r.json(); });
     },
 
     excluirAutor: function(id) {
-        return fetch(this.BASE_URL + '/autores/' + id, {
-            method: 'DELETE'
-        }).then(function(r) { return r.json(); });
+        return fetch(this.BASE_URL + '/autores/' + id, { method: 'DELETE' }).then(function(r) { return r.json(); });
     },
-
-    // ==========================================
-    // ARTIGOS
-    // ==========================================
 
     getArtigos: function() {
         return fetch(this.BASE_URL + '/artigos').then(function(r) { return r.json(); });
@@ -62,28 +46,13 @@ var API = {
     criarArtigo: function(dados) {
         return fetch(this.BASE_URL + '/artigos', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dados)
-        }).then(function(r) { return r.json(); });
-    },
-
-    atualizarArtigo: function(id, dados) {
-        return fetch(this.BASE_URL + '/artigos/' + id, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dados)
+            body: dados  // FormData
         }).then(function(r) { return r.json(); });
     },
 
     excluirArtigo: function(id) {
-        return fetch(this.BASE_URL + '/artigos/' + id, {
-            method: 'DELETE'
-        }).then(function(r) { return r.json(); });
+        return fetch(this.BASE_URL + '/artigos/' + id, { method: 'DELETE' }).then(function(r) { return r.json(); });
     },
-
-    // ==========================================
-    // VOLUNTÁRIOS E NEWSLETTER
-    // ==========================================
 
     cadastrarVoluntario: function(dados) {
         return fetch(this.BASE_URL + '/voluntarios', {

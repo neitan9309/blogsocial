@@ -54,7 +54,7 @@ var BlogUtils = {
 
                 // Tentar salvar via API (servidor Node.js)
                 try {
-                    fetch('http://localhost:3000/api/newsletter', {
+                    fetch('/api/newsletter', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ email: email })

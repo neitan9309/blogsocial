@@ -243,7 +243,7 @@ VoluntarioManager.prototype.salvarVoluntario = function(voluntario) {
 
     // Tentar salvar via API
     try {
-        fetch('http://localhost:3000/api/voluntarios', {
+        fetch('/api/voluntarios', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(voluntario)
