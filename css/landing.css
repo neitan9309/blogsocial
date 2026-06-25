@@ -2,7 +2,6 @@
    LANDING PAGE
    ========================================== */
 
-/* Fontes modernas */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 /* ==========================================
@@ -10,7 +9,7 @@
    ========================================== */
 
 .hero {
-    background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 100%),
+    background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 100%), 
                 url('https://images.unsplash.com/photo-1697639659506-ada9b78ae2ae?q=80&w=1250&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
@@ -23,7 +22,6 @@
     overflow: hidden;
 }
 
-/* Overlay com gradiente sutil */
 .hero::before {
     content: '';
     position: absolute;
@@ -35,16 +33,16 @@
     pointer-events: none;
 }
 
-/* Linha decorativa na base */
+/* Degrade suave na transição hero → objetivos */
 .hero::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 5%;
-    right: 5%;
-    height: 1px;
-    background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.3) 20%, rgba(255,255,255,0.3) 80%, transparent 100%);
-    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    background: linear-gradient(to bottom, transparent 15%, white 100%);
+    z-index: 3;
 }
 
 .hero-content {
@@ -58,7 +56,6 @@
     justify-content: flex-end;
 }
 
-/* Texto alinhado à direita */
 .hero-text {
     max-width: 550px;
     text-align: right;
@@ -71,7 +68,6 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Badge decorativo */
 .hero-badge {
     display: inline-block;
     background: rgba(255, 255, 255, 0.15);
@@ -99,7 +95,6 @@
     animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
-/* Destaque no título */
 .hero-text h1 .highlight {
     background: linear-gradient(135deg, #A8E6CF 0%, #6C5CE7 100%);
     -webkit-background-clip: text;
@@ -117,7 +112,6 @@
     animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
-/* Botões de chamada para ação */
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -144,7 +138,6 @@
     white-space: nowrap;
 }
 
-/* Efeito ripple no hover */
 .btn::before {
     content: '';
     position: absolute;
@@ -209,19 +202,16 @@
     position: relative;
 }
 
-/* Linhas decorativas de separação */
-.objetivos::before,
+
 .objetivos::after {
     content: '';
     position: absolute;
+    bottom: 0;
     left: 5%;
     right: 5%;
     height: 1px;
     background: linear-gradient(to right, transparent 0%, #d0d0d0 20%, #d0d0d0 80%, transparent 100%);
 }
-
-.objetivos::before { top: 0; }
-.objetivos::after { bottom: 0; }
 
 .objetivos .container {
     padding: 0 var(--spacing);
@@ -244,7 +234,6 @@
     overflow: hidden;
 }
 
-/* Barra superior animada no hover */
 .objetivo-card::before {
     content: '';
     position: absolute;
@@ -281,7 +270,6 @@
     font-size: 0.95rem;
 }
 
-/* Formas geométricas decorativas */
 .forma-geometrica {
     width: 55px;
     height: 55px;
@@ -326,19 +314,25 @@
     position: relative;
 }
 
-/* Linhas decorativas de separação */
-.artigos-recentes::before,
-.artigos-recentes::after {
+.artigos-recentes::before {
     content: '';
     position: absolute;
+    top: 0;
     left: 5%;
     right: 5%;
     height: 1px;
     background: linear-gradient(to right, transparent 0%, #d0d0d0 20%, #d0d0d0 80%, transparent 100%);
 }
 
-.artigos-recentes::before { top: 0; }
-.artigos-recentes::after { bottom: 0; }
+.artigos-recentes::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background: linear-gradient(to right, transparent 0%, #d0d0d0 20%, #d0d0d0 80%, transparent 100%);
+}
 
 .artigos-recentes .container {
     padding: 0 var(--spacing);
@@ -353,7 +347,6 @@
     font-weight: 700;
 }
 
-/* Grid de artigos (3 colunas) */
 .artigos-recentes .artigos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -436,11 +429,9 @@
     .artigos-recentes .artigos-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .hero-text h1 {
         font-size: 2.8rem;
     }
-
     .hero-text {
         padding-right: 1rem;
     }
@@ -451,35 +442,28 @@
         height: 80vh;
         min-height: 500px;
     }
-
     .hero-content {
         justify-content: center;
         padding: 0 1.5rem;
     }
-
     .hero-text {
         text-align: center;
         max-width: 100%;
         padding-right: 0;
         padding: 0 0.5rem;
     }
-
     .hero-text h1 {
         font-size: 2.2rem;
     }
-
     .hero-text p {
         font-size: 1rem;
         padding: 0 0.5rem;
     }
-
     .hero-buttons {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         padding: 0 1rem;
     }
-
     .btn {
         width: auto;
         min-width: 200px;
@@ -487,11 +471,9 @@
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
     }
-
     .artigos-recentes .artigos-grid {
         grid-template-columns: 1fr;
     }
-
     .artigos-recentes h2 {
         font-size: 2rem;
     }
@@ -502,21 +484,17 @@
         height: 70vh;
         min-height: 450px;
     }
-
     .hero-text h1 {
         font-size: 1.8rem;
     }
-
     .hero-badge {
         font-size: 0.75rem;
         padding: 0.4rem 1rem;
     }
-
     .hero-text p {
         font-size: 0.9rem;
         padding: 0;
     }
-
     .btn {
         min-width: 180px;
         padding: 0.7rem 1.3rem;
