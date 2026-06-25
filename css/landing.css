@@ -10,7 +10,7 @@
 
 .hero {
     background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 100%), 
-                url('https://images.unsplash.com/photo-1697639659506-ada9b78ae2ae?q=80&w=1250&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+                url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1600');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -33,15 +33,14 @@
     pointer-events: none;
 }
 
-/* Degrade suave na transição hero → objetivos */
 .hero::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 22px;
-    background: linear-gradient(to bottom, transparent 15%, white 100%);
+    height: 40px;
+    background: linear-gradient(to bottom, transparent 0%, white 100%);
     z-index: 3;
 }
 
@@ -165,6 +164,8 @@
     background: linear-gradient(135deg, #6C5CE7 0%, #A8E6CF 100%);
     color: white;
     box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+    padding: 1rem 2.2rem;
+    font-size: 1rem;
 }
 
 .btn-primary:hover {
@@ -201,7 +202,6 @@
     background: white;
     position: relative;
 }
-
 
 .objetivos::after {
     content: '';
@@ -439,7 +439,7 @@
 
 @media (max-width: 768px) {
     .hero {
-        height: 85vh;
+        height: 100vh;
         min-height: 500px;
     }
     .hero-content {
@@ -463,14 +463,31 @@
         flex-direction: column;
         align-items: center;
         padding: 0 1rem;
+        gap: 1rem;
     }
-    .btn {
-        width: auto;
-        min-width: 200px;
+    
+    /* Botão Seja Voluntário - MAIOR e MAIS DESTACADO */
+    .btn-primary {
+        width: 100%;
+        max-width: 300px;
+        min-width: auto;
+        padding: 1.1rem 2.5rem;
+        font-size: 1.05rem;
         justify-content: center;
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
+        order: 2;
     }
+    
+    /* Botão Leia Nossos Artigos - menor */
+    .btn-secondary {
+        width: 100%;
+        max-width: 260px;
+        min-width: auto;
+        padding: 0.8rem 1.8rem;
+        font-size: 0.9rem;
+        justify-content: center;
+        order: 1;
+    }
+    
     .artigos-recentes .artigos-grid {
         grid-template-columns: 1fr;
     }
@@ -481,7 +498,7 @@
 
 @media (max-width: 480px) {
     .hero {
-        height: 85vh;
+        height: 100vh;
         min-height: 450px;
     }
     .hero-text h1 {
@@ -495,9 +512,16 @@
         font-size: 0.9rem;
         padding: 0;
     }
-    .btn {
-        min-width: 180px;
-        padding: 0.7rem 1.3rem;
+    
+    .btn-primary {
+        max-width: 280px;
+        padding: 1rem 2.2rem;
+        font-size: 1rem;
+    }
+    
+    .btn-secondary {
+        max-width: 240px;
+        padding: 0.7rem 1.5rem;
         font-size: 0.85rem;
     }
 }
