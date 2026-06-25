@@ -13,7 +13,7 @@
                 url('https://images.unsplash.com/photo-1697639659506-ada9b78ae2ae?q=80&w=1250&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
-    height: 90vh;
+    height: 100vh;
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -439,7 +439,7 @@
 
 @media (max-width: 768px) {
     .hero {
-        height: 80vh;
+        height: 100vh;
         min-height: 500px;
     }
     .hero-content {
@@ -481,7 +481,7 @@
 
 @media (max-width: 480px) {
     .hero {
-        height: 70vh;
+        height: 100vh;
         min-height: 450px;
     }
     .hero-text h1 {
