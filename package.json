@@ -1,0 +1,16 @@
+{
+  "name": "blogsocial",
+  "version": "2.0.0",
+  "description": "BlogSocial - Sistema de Blog com SQLite",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "multer": "^2.2.0",
+    "sqlite3": "^5.1.6"
+  }
+}

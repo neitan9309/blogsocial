@@ -1,0 +1,12 @@
+# Dependências
+node_modules/
+
+# Banco de dados local
+*.db
+
+# Uploads de usuários
+uploads/*
+!uploads/.gitkeep
+
+# Arquivos de ambiente
+.env
